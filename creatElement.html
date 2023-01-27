@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="container" id="myul">
+      <h1>welcome to my mangal murti appartment</h1>
+      <div class="child" id="fdiv">first child</div>
+      <div class="child">second child</div>
+      <div class="child">third child</div>
+      <div class="child" id="ldiv">fourth child</div>
+    </div>
+  </body>
+  <script>
+    let element = document.createElement("div");
+    element.className = "child";
+    element.id = "created-child";
+    element.setAttribute("href", "https://codewithharry.com");
+    let container = document.querySelector("div.container");
+    element.innerHTML = "<h1>code with harry</h1>";
+    let text = document.createTextNode("create by hkram");
+    element.appendChild(text);
+    container.appendChild(element);
+    let elem2 = document.createElement("h3");
+    elem2.id = "elem2";
+    elem2.className = "elem2";
+    let tnode = document.createTextNode("this is created tnode for elem2");
+    elem2.appendChild(tnode);
+    element.replaceWith(elem2);
+
+    let myul = document.getElementById("myul");
+    myul.replaceChild(element, document.getElementById("fdiv"));
+    myul.removeChild(document.getElementById("ldiv"));
+  </script>
+</html>
